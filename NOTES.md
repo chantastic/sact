@@ -4,4 +4,9 @@
   - Google Fonts are already setup, so I can easily grab the one I want for this project
   - Quiclky setup the Metadata I care about for this tiny project
   - And get to work styling with tailwind…
+- I want a simple layout optimized for my phone but doesn't look terrible on larger screens. For that, I…
+  - Use 100% of the available viewport with `dvh` and `dvw`. This is a dynamic viewport that, unlike `vh` take into account mobile browser chrome. Which is great
+    - Tailwind doesn't have values for this but I can use their bracket syntax to provide literal values — very nice.
+  - Then I have a little centered element that responds minimally to the orientation of the window
+  - One little hack I do with tailwind is to use string literals. i can minimally organize my classes without using having to extract them in any way. This isn't great. The only real downside is that you're opting out of prettier for formatting
 
