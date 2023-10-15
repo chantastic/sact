@@ -12,7 +12,8 @@
     "js-confetti": "^0.11.0",
     "next": "13.5.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "use-aria-live": "^0.0.5"
   },
   "devDependencies": {
     "typescript": "^5",

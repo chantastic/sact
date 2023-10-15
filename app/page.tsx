@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import JSConfetti from 'js-confetti'
+import { useAriaLive, PoliteAriaLive } from 'use-aria-live'
 
 type Manner = 'solo' | 'partner' | 'unknown' | null
 
@@ -10,8 +11,14 @@ let initialEvacuations: Manner[] = Array(19).fill(null)
 export default function Home() {
   let [evacuations, updateEvacuations] = React.useState(initialEvacuations)
 
+  let [politeAnnouncement, announcePolitely] = useAriaLive()
+
   React.useEffect(() => {
     if (evacuationsRemaining(evacuations) > 1) return
+
+    announcePolitely(
+      'Great job! Collect this sample and get your ass to the lab within 60 minutes.'
+    )
 
     const jsConfetti = new JSConfetti()
 
@@ -34,6 +41,10 @@ export default function Home() {
 
   function addNextEvacuation(manner: Manner) {
     let nextEvacuation = evacuations.findIndex((element) => element === null)
+
+    announcePolitely(
+      `Evacuation ${nextEvacuation + 1} of 20 was tracked as ${manner}.`
+    )
 
     updateEvacuations((evacuations) => {
       let newEvacuations = [...evacuations]
@@ -179,6 +190,7 @@ export default function Home() {
           </div>
         )}
       </main>
+      <PoliteAriaLive>{politeAnnouncement}</PoliteAriaLive>
     </>
   )
 }
