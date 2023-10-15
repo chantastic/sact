@@ -3,6 +3,7 @@
 import * as React from 'react'
 import JSConfetti from 'js-confetti'
 import { useAriaLive, PoliteAriaLive } from 'use-aria-live'
+import { UserButton } from '@clerk/nextjs'
 
 type Manner = 'solo' | 'partner' | 'unknown' | null
 
@@ -85,7 +86,13 @@ export default function Home() {
   }
   return (
     <>
-      <header className='flex justify-center text-4xl'>Sact 🍒</header>
+      <header className='flex text-4xl justify-center relative'>
+        <span>Sact 🍒</span>
+
+        <span className='absolute right-0 top-1'>
+          <UserButton afterSignOutUrl='/' />
+        </span>
+      </header>
       <main className='flex portrait:flex-col landscape:flex-row h-full mt-8 justify-around'>
         {evacuationsRemaining(evacuations) > 1 ? (
           <>
