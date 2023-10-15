@@ -22,4 +22,31 @@
       - because these use emoji, we have an aria label to provide a discription
 - Ok. That's the visual change I'm gonna show you. You have to check out the final app to see the rest.
 - Let's jump into the coding.
-- 
+- First things first, let's turn this array to `state` with `useState`
+
+  - I'll use the most delicate term I can think of for this "evacuations"
+  - I create a variable for this, so that I can easily and clearly add as shared type (defined above)
+  - We hook up our actions (solo, partner, and "prefer not to say")
+    - Those update state by finding the next `null` and replacing it with the provided value
+    - Then we use that state to render the manner we used, in the grid
+    - And provide a correct statement about that method to assistive technologise ("completed solo", "…with a partner", or "…in shame" lol)
+    - YES. I'm just using the array index. No, it's not a super big deal here because the size of the array isn't changing between renders.
+    - Finally, we render the remaining count by filtering `null` values
+
+
+-
+
+- And I'll leave a little surprise for you when you get to 20
+
+Things to demo:
+
+- Nextjs really can't be beat for ease of setup.
+- I start of my projects with this kind "mobile only" css setup.
+  - It just defaults to a mobile-ish shape that will be 100% of the dynamic viewport (using `dv*` units)
+  - I lov ethat next just has that global.css file ready to go
+- I really like the `Tilt Warp` Google font for this. It's an extremely limited font but I don't have much text.
+  - Again, Next, layouts and next/font make this super easy to add
+
+Followup:
+
+- post on emoji effect from tl-draw
