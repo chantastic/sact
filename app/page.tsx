@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import JSConfetti from 'js-confetti'
+/* @ts-ignore */
 import { useAriaLive, PoliteAriaLive } from 'use-aria-live'
 import { UserButton } from '@clerk/nextjs'
 
@@ -38,7 +39,7 @@ export default function Home() {
     return () => {
       jsConfetti.clearCanvas()
     }
-  }, [evacuations])
+  }, [evacuations, announcePolitely])
 
   function addNextEvacuation(manner: Manner) {
     let nextEvacuation = evacuations.findIndex((element) => element === null)
