@@ -175,6 +175,7 @@ export default function Home() {
                     evacuations.reduce(
                       (acc, item) => ({
                         ...acc,
+                        /* @ts-ignore */
                         [String(item)]: Number(acc[String(item)]) + 1,
                       }),
                       { solo: 0, partner: 0, unknown: 0 }
@@ -183,6 +184,7 @@ export default function Home() {
                     <tr key={k} className='border-b '>
                       <td className='px-6 py-4 font-medium whitespace-nowrap opacity-60'>
                         <span className='mr-2'>
+                          {/* @ts-ignore */}
                           {getMannerEmoji(String(k))}
                         </span>
                         <span>
