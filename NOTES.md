@@ -33,6 +33,12 @@
     - YES. I'm just using the array index. No, it's not a super big deal here because the size of the array isn't changing between renders.
     - Finally, we render the remaining count by filtering `null` values
 
+- add the confetti
+- add a complete screen with stats
+
+  - reduce is my favorite JS function of all
+  - a cheat that i do a lot (when i don't want to faff with colors) is just reduce the opacity of a node.
+
 
 -
 
