@@ -9,4 +9,17 @@
     - Tailwind doesn't have values for this but I can use their bracket syntax to provide literal values — very nice.
   - Then I have a little centered element that responds minimally to the orientation of the window
   - One little hack I do with tailwind is to use string literals. i can minimally organize my classes without using having to extract them in any way. This isn't great. The only real downside is that you're opting out of prettier for formatting
-
+- Draw the rest of the UI Owl
+  - I always like to start with the markup.
+    - `main` to wrap mark the main section of our page.
+    - An `ol` ("ordered list") of events
+      - We'll render this as `grid`
+      - And, in lieu of state, we'll provide a 19-item array filed with null.
+      - Each item is a `li` ("list time")
+        - Because our button content is an emoji, I'd like to describe it with an `aria-label`
+        - I'll use a static one for incomplete now and we'll come back to it.
+    - finally we have our action buttons.
+      - because these use emoji, we have an aria label to provide a discription
+- Ok. That's the visual change I'm gonna show you. You have to check out the final app to see the rest.
+- Let's jump into the coding.
+- 
