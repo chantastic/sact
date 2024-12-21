@@ -4,7 +4,6 @@ import * as React from 'react'
 import JSConfetti from 'js-confetti'
 /* @ts-ignore */
 import { useAriaLive, PoliteAriaLive } from 'use-aria-live'
-import { UserButton } from '@clerk/nextjs'
 
 type Manner = 'solo' | 'partner' | 'unknown' | null
 
@@ -89,10 +88,6 @@ export default function Home() {
     <>
       <header className='flex text-4xl justify-center relative'>
         <span>Sact 🍒</span>
-
-        <span className='absolute right-0 top-1'>
-          <UserButton afterSignOutUrl='/' />
-        </span>
       </header>
       <main className='flex portrait:flex-col landscape:flex-row h-full mt-8 justify-around'>
         {evacuationsRemaining(evacuations) > 1 ? (
@@ -103,9 +98,8 @@ export default function Home() {
                   return (
                     <li
                       key={i}
-                      aria-label={`Evacuation ${
-                        i + 1
-                      } of 20. ${getMannerStatement(evacuation)}`}
+                      aria-label={`Evacuation ${i + 1
+                        } of 20. ${getMannerStatement(evacuation)}`}
                     >
                       <span className={evacuation ? `text-4xl` : 'text-sm'}>
                         {getMannerEmoji(evacuation)}
